@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCompressedProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <CompressedProduct>
+    <ID>0</ID>
+    <Name>Whiskey</Name>
+    <Price>10</Price>
+  </CompressedProduct>
+  <CompressedProduct>
+    <ID>1</ID>
+    <Name>Water</Name>
+    <Price>0.5</Price>
+  </CompressedProduct>
+  <CompressedProduct>
+    <ID>2</ID>
+    <Name>Bread</Name>
+    <Price>10000</Price>
+  </CompressedProduct>
+  <CompressedProduct>
+    <ID>3</ID>
+    <Name>Taco</Name>
+    <Price>5.15</Price>
+  </CompressedProduct>
+  <CompressedProduct>
+    <ID>4</ID>
+    <Name>Pizza</Name>
+    <Price>5.15</Price>
+  </CompressedProduct>
+</ArrayOfCompressedProduct>
