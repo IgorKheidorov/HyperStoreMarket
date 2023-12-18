@@ -1,5 +1,4 @@
 ﻿using FirstLanguageSampleMexico.MarkerEntities;
-using System.Data.Common;
 
 namespace HyperStoreEntities.DAL.Repositories.XML.XMLEntities
 {

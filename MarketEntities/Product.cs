@@ -21,4 +21,9 @@ public class Product
         return Name.Length ^ Price.GetHashCode();
     }
 
+    public override string ToString()
+    {
+        return $"Product: {Name}, {Price}$";
+    }
+
 }

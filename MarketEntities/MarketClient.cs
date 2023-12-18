@@ -13,12 +13,13 @@ public class MarketClient : ICloneable
     public MarketClient(string name)
     {
         Name = name;
+        InitializePaymentMeans();
     }
 
     public void InitializePaymentMeans()
     {
-        _paymentMeans.Add(new DebetPaymentCard(1, Name, 10f));
-        _paymentMeans.Add(new CreditPaymentCard(4, Name, 100));
+        _paymentMeans.Add(new DebetPaymentCard(1, Name, 1000f));
+        _paymentMeans.Add(new CreditPaymentCard(4, Name, 1000));
         _paymentMeans.Add(new BitCoin());
     }
 

@@ -2,198 +2,234 @@
 <ArrayOfXMLProduct xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Whiskey</Name>
-    <Price>10</Price>
+    <Price>0.0018086601</Price>
   </XMLProduct>
   <XMLProduct>
-    <Name>Water</Name>
-    <Price>0.5</Price>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.0027129909</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.0038757012</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.005536713</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.007909591</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.011299416</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.016375968</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.023394242</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.033904698</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.048435286</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00093145977</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.07019608</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.10028011</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.1432573</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.2046533</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.29236186</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.4176598</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.59665686</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>0.852367</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>1.2176671</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>1.7395242</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>2.4850347</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Milk</Name>
+    <Price>3.5500495</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00089210767</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00089210767</Price>
+  </XMLProduct>
+  <XMLProduct>
+    <Name>Pizza</Name>
+    <Price>0.00089210767</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Bread</Name>
-    <Price>10000</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Taco</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Taco</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Taco</Name>
-    <Price>5.15</Price>
+    <Price>1.8086601</Price>
   </XMLProduct>
   <XMLProduct>
     <Name>Pizza</Name>
-    <Price>5.15</Price>
+    <Price>0.00089210767</Price>
   </XMLProduct>
   <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
+    <Name>Milk</Name>
+    <Price>5.145</Price>
   </XMLProduct>
   <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
+    <Name>Milk</Name>
+    <Price>7.35</Price>
   </XMLProduct>
   <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
-  </XMLProduct>
-  <XMLProduct>
-    <Name>Pizza</Name>
-    <Price>5.15</Price>
+    <Name>Milk</Name>
+    <Price>10.5</Price>
   </XMLProduct>
 </ArrayOfXMLProduct>

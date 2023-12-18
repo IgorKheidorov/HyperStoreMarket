@@ -1,7 +1,5 @@
 ﻿using FirstLanguageSampleMexico.MarkerEntities;
-using HyperStoreEntities.DAL.Interfaces;
-using HyperStoreEntities.DAL.Repositories.XML;
-using System.Data;
+using HyperStoreEntities.Factory;
 
 namespace FirstLanguageSampleMexico;
 
@@ -9,40 +7,26 @@ internal class Program
 {
     static void Main(string[] args)
     {
-        var store = new HyperStore("ProStore");
+        var store = HyperStoreBuilder.BuildHyperStore("Happy hours", "Food");
 
-        IRepositoryRead reader = new XMLReader();
-        store.Products = reader.GetProducts();
+        store.PrepareForOpen(); // Create commands
+        store.Open(); // execute
 
-        IRepositoryWrite writer = new XMLWriter();
-        writer.SaveProducts(store.Products);
+        MarketClient client = new MarketClient("John");
+        store.SellProduct("Pizza", client);
+        store.SellProduct("Bread", client);
+        store.SellProduct("Pizza", client);
+        store.SellProduct("Pizza", client);
+        store.SellProduct("Bread", client);
+        store.SellProduct("Pizza", client);
 
-        writer = new XMLCompressedWriter();
-        writer.SaveProducts(store.Products);
-        reader = new XMLCompressedReader();
-        store.Products = reader.GetProducts();
 
-        writer.SaveProducts(store.Products);
-        store.Products = reader.GetProducts();
-      
-        var client = new MarketClient("Jonny");
-        client.InitializePaymentMeans();
-        
-        client.Purchase += store.SellProduct;
+        store.ProcessPurchases(); // execute
 
-        var productToBuy = store.Where(x => x.Name == "Bread").First();
+    //    store.DismissPurchases();
 
-        try
-        {
-            client.MakePurchase(productToBuy);
-
-        }
-        catch
-        {
-            store.ReturnProduct(productToBuy);
-        }
-
-                  
+      //  store.PrepareForClose();
+        //store.Close();
        
     }
  
