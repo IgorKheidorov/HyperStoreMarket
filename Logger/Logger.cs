@@ -3,7 +3,7 @@
 // Make it singleton
 internal class FileLogger : ILog
 {
-    const string LOG_FILE_NAME = "log1.txt";
+    const string LOG_FILE_NAME = "log_store_activity.txt";
     static FileLogger? _logger;
     private FileLogger() { }
 
@@ -28,9 +28,17 @@ internal class FileLogger : ILog
                 fsWrite.WriteLine(message + DateTime.Now.ToString());
                 fsWrite.Flush();
             }
-
         }
-       
-        
     }
+
+    public async Task LogMessageAsync(string? message)
+    {
+
+        using (StreamWriter fsWrite = new StreamWriter(LOG_FILE_NAME, true))
+        {
+            TextWriter.Synchronized(fsWrite); // Make it thread safety
+            await fsWrite.WriteLineAsync(message + DateTime.Now.ToString());   
+        }
+    }
+    
 }

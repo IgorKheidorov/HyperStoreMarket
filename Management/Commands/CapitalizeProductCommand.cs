@@ -4,7 +4,7 @@ using HyperStoreEntities.MarketEntities;
 
 namespace HyperStoreEntities.Management.Commands
 {
-    internal class CapitalizeProductCommand : IMarketCommand
+    internal class CapitalizeProductCommand : IMarketCommand, IMarketCommandAsync
     {   
         Product _product;
 
@@ -15,8 +15,15 @@ namespace HyperStoreEntities.Management.Commands
 
         public void Execute()
         {
-            MarketProducts.GetProducts().Add(_product);
+            MarketProducts.GetInstance().AddProduct(_product);
             FileLogger.GetLogger().LogMessage($"{_product.ToString()} is capitalized!");
         }
+
+        public async Task ExecuteAsync()
+        {
+            MarketProducts.GetInstance().AddProduct(_product);
+            await FileLogger.GetLogger().LogMessageAsync($"{_product.ToString()} is capitalized!");
+        }
+
     }
 }

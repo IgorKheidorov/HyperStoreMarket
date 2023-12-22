@@ -1,5 +1,6 @@
 ﻿using FirstLanguageSampleMexico.MarkerEntities;
 using HyperStoreEntities.Factory;
+using HyperStoreEntities.Logger;
 
 namespace FirstLanguageSampleMexico;
 
@@ -13,20 +14,20 @@ internal class Program
         store.Open(); // execute
 
         MarketClient client = new MarketClient("John");
-        store.SellProduct("Pizza", client);
-        store.SellProduct("Bread", client);
-        store.SellProduct("Pizza", client);
-        store.SellProduct("Pizza", client);
-        store.SellProduct("Bread", client);
-        store.SellProduct("Pizza", client);
 
+        // Join is filling the shop bag
+        int purchasesCount = 10;
+                while (purchasesCount-- > 0) 
+        {
+            store.SellProduct("Milk", client);
+            store.SellProduct("Water", client);
+        }
 
+        // John is on cash box
         store.ProcessPurchases(); // execute
-
-    //    store.DismissPurchases();
-
-      //  store.PrepareForClose();
-        //store.Close();
+    
+        store.PrepareForClose();
+        store.Close();
        
     }
  

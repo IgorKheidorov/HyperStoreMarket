@@ -13,8 +13,8 @@ internal class XMLWriter : IRepositoryWrite
     public void SaveProducts(List<Product> products)
     {
         List<XMLProduct> readyToSerialize = products.Select(x => new XMLProduct { Name = x.Name, Price = x.Price }).ToList();
-            ;
-        using (FileStream fsRead = new FileStream(PRODUCTS_XML_PATH, FileMode.Open))
+            
+        using (FileStream fsRead = new FileStream(PRODUCTS_XML_PATH, FileMode.Create))
         {
             _serializer.Serialize(fsRead, readyToSerialize);
         }

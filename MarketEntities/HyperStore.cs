@@ -1,13 +1,12 @@
 ﻿using HyperStoreEntities.Management.Commands;
 using HyperStoreEntities.MarketEntities;
-using System.Collections;
 using System.Diagnostics;
 
 namespace FirstLanguageSampleMexico.MarkerEntities;
 
-public class HyperStore : IEnumerable<Product>
+public class HyperStore
 {
-    List<IMarketCommand> _commands;
+    List<IMarketCommandAsync> _commands;
 
     public string Type { get; set; }
 
@@ -15,7 +14,7 @@ public class HyperStore : IEnumerable<Product>
 
     public HyperStore(string name)
     {
-        _commands = new List<IMarketCommand>();
+        _commands = new List<IMarketCommandAsync>();
         Name = name;
     }
 
@@ -26,8 +25,8 @@ public class HyperStore : IEnumerable<Product>
         {
             return _transport;
         }
-        set 
-        {           
+        set
+        {
             _transport = value;
         }
     }
@@ -50,74 +49,80 @@ public class HyperStore : IEnumerable<Product>
     {
         // Can be changed for any purposes
         _commands.Add(new LoadStorageCommand());
-    //    _commands.Add(new CapitalizeProductCommand(new Product("Milk", 15f)));
-    //    _commands.Add(new OrganizeSalesCommand(30));
+
+        int num = 10;
+        while (num-- > 0)
+        {
+            _commands.Add(new CapitalizeProductCommand(new Product("Milk", 1.5f)));
+            _commands.Add(new CapitalizeProductCommand(new Product("Water", 3.1f)));
+        }
+
         _commands.Add(new UpdateStorageCommand());
     }
 
-    public void Open() 
-    {   
-        _commands.ForEach(x => x.Execute());     
-        _commands.Clear();
-    }
-
-    public void PrepareForClose() 
+    public void Open()
     {
-       // _commands.Add(new OrganizeSalesCommand(100f/70f));
-       // _commands.Add(new UpdateStorageCommand());
-    }
+        var tasks = new List<Task>();
 
-    public void Close()
-    {
-        _commands.ForEach(x => x.Execute());
-        _commands.Clear();
-    }
+        // Main thread
 
-    public void SellProduct(string productName, MarketClient client) 
-    {
-        _commands.Add(new SellProductCommand(MarketProducts.GetProducts().Where(x => x.Name == productName).First(), client));        
-    }
-
-    public void ProcessPurchases() 
-    {
-        int numberBefore = MarketProducts.GetProducts().Count();
-
-        Stopwatch sw = new Stopwatch();
-        sw.Start();
-        
-        var tasks = _commands.Select(x => Task.Run(() => x.Execute())).ToArray();
+        foreach (var command in _commands)
+        {
+            // commands.Count() threads are added
+            tasks.Add(command.ExecuteAsync());
+        }
 
         // some activity
 
+        Task.WaitAll(tasks.ToArray());
 
-        Task.WaitAll(tasks);
+        var products = MarketProducts.GetInstance().Products;
+        _commands.Clear();
+    }
 
-        //_commands.Clear();
+    public void PrepareForClose()
+    {
+        _commands.Add(new UpdateStorageCommand());
+    }
+
+
+    public void Close()
+    {
+        _commands.ForEach(x => x.ExecuteAsync());
+        _commands.Clear();
+    }
+
+    public void SellProduct(string productName, MarketClient client)
+    {
+        _commands.Add(new SellProductCommand(productName, client));
+    }
+
+    public void ProcessPurchases()
+    {
+        int numberBefore = MarketProducts.GetInstance().Products.Count();
+
+        Stopwatch sw = new Stopwatch();
+        sw.Start();
+        var tasks = new List<Task>();
+
+        // Main thread
+
+        foreach (var command in _commands)
+        {
+            // commands.Count() number of threads are added
+            tasks.Add(command.ExecuteAsync());
+        }
+
+        // some activity
+
+        Task.WaitAll(tasks.ToArray());
+
         sw.Stop();
-        int numberAfter = MarketProducts.GetProducts().Count();
+        int numberAfter = MarketProducts.GetInstance().Products.Count();
 
         long time = sw.ElapsedMilliseconds;
+        _commands.Clear();
     }
-
-    public void DismissPurchases()
-    {
-        _commands.Where(x => x is SellProductCommand command ).ToList().ForEach(x => x.Undo());        
-    }
-
-
-    public void ReturnProduct(Product product) 
-    {
-        MarketProducts.GetProducts().Add(product);
-    }
-
-    
-    public IEnumerator<Product> GetEnumerator()
-    {
-        return MarketProducts.GetProducts().OrderBy(x => x.Price).GetEnumerator();
-    }
-
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        throw new NotImplementedException();
-    }
+ 
 }
+

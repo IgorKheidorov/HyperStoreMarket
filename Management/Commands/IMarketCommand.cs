@@ -8,7 +8,6 @@ namespace HyperStoreEntities.Management.Commands
 {
     internal interface IMarketCommand
     {   
-        void Execute();
-        void Undo() { }
+        void Execute();        
     }
 }

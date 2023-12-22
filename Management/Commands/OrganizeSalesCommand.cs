@@ -4,23 +4,26 @@ using HyperStoreEntities.MarketEntities;
 
 namespace HyperStoreEntities.Management.Commands;
 
-internal class OrganizeSalesCommand : IMarketCommand
+internal class OrganizeSalesCommand : IMarketCommand, IMarketCommandAsync
 {
     float _salesProcentage;
 
     public OrganizeSalesCommand(float salesProcentage)
     {
-       _salesProcentage = 1 - salesProcentage / 100f;
+        _salesProcentage = 1 - salesProcentage / 100f;
     }
 
     public void Execute()
     {
-        MarketProducts.GetProducts().ForEach(x => x.Price *= _salesProcentage);
+        MarketProducts.GetInstance().Products.ForEach(x => x.Price *= _salesProcentage);
         FileLogger.GetLogger().LogMessage($"Sales orginized!");
     }
 
-    public void Undo() 
+    public async Task ExecuteAsync()
     {
-        MarketProducts.GetProducts().ForEach(x => x.Price /= (100 - _salesProcentage) * 100 );
+        MarketProducts.GetInstance().Products.ForEach(x => x.Price *= _salesProcentage);
+        await FileLogger.GetLogger().LogMessageAsync($"Sales orginized!");
     }
+
+
 }

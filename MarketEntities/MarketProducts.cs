@@ -1,21 +1,45 @@
 ﻿using FirstLanguageSampleMexico.MarkerEntities;
-using System.Dynamic;
+using System.Collections;
 
 namespace HyperStoreEntities.MarketEntities;
 
 internal class MarketProducts
 {
-    static List<Product>? _products;
+    List<Product>? _products = new List<Product>();
+    static MarketProducts _marketProducts;
     MarketProducts() { }
 
-    public static List<Product> GetProducts() 
+    public List<Product> Products { get => _products; }
+    private readonly object _locker = new object();
+
+    public static MarketProducts GetInstance()
     {
-        if (_products == null)
+        if (_marketProducts == null)
         {
-            _products = new List<Product>();
+            _marketProducts = new MarketProducts();
         }
 
-        return _products;
+        return _marketProducts;
     }
 
+    public void AddProduct(Product product)
+    {
+        lock (_locker)
+        {
+            _products?.Add(product);
+        }
+    }
+
+    public void RemoveProduct(Product product)
+    { 
+        lock(_locker)
+        {
+            _products?.Remove(product);
+        }    
+    }
+
+    
 }
+
+
+

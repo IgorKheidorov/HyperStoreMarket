@@ -1,35 +1,36 @@
 ﻿using FirstLanguageSampleMexico.MarkerEntities;
 using HyperStoreEntities.Logger;
 using HyperStoreEntities.MarketEntities;
+
 namespace HyperStoreEntities.Management.Commands;
 
-internal class SellProductCommand : IMarketCommand
+internal class SellProductCommand : IMarketCommand, IMarketCommandAsync
 {
-    Product _product;
+    string _productName;
     MarketClient _client;
     public bool IsSuccesfull {get; set;}
 
-    public SellProductCommand(Product product, MarketClient client)
+    public SellProductCommand(string product, MarketClient client)
     {  
-        _product = product;
+        _productName = product;
         _client = client;
         IsSuccesfull = true;
     }
     
     public void Execute()
     {
-        _client.MakePurchase(_product);
-        
-        MarketProducts.GetProducts().Remove(_product);
-        FileLogger.GetLogger().LogMessage($"{_product.ToString()} is sold!");
-
-        Thread.Sleep(3000);
+        var product = MarketProducts.GetInstance().Products.Where(x => x.Name == _productName).First();
+        _client.MakePurchase(product);        
+        MarketProducts.GetInstance().RemoveProduct(product);
+        FileLogger.GetLogger().LogMessage($"{product.ToString()} is sold!");        
     }
 
-    public void Undo() 
+    public async Task ExecuteAsync()
     {
-        MarketProducts.GetProducts().Add(_product);
-      //  _client.Refund(_product.Price);
-    
+        var product = MarketProducts.GetInstance().Products.Where(x => x.Name == _productName).First();
+        MarketProducts.GetInstance().RemoveProduct(product);
+        await FileLogger.GetLogger().LogMessageAsync($"{product.ToString()} is sold!");
+        await FileLogger.GetLogger().LogMessageAsync($"{MarketProducts.GetInstance().Products.Count} remains!");
     }
+ 
 }
